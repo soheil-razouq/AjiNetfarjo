@@ -5,6 +5,7 @@ import HomeBanner from "./components/HomeBanner";
 import Login from "./components/Login";
 import Banner from "./components/Banner";
 import List from "./components/List";
+import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -34,12 +35,15 @@ function App() {
             <React.Fragment>
               <Header/>
               <Banner/>
-              <List title="Netflix Originals" param="originals"/>
+              {/* <List title="Netflix Originals" param="originals"/> */}
+              <h2>Featured Now</h2>
               <List title="Trending Now" param="trending"/>
-              <List title="Now Playing" param="now_playing"/>
+              {/* <List title="Now Playing" param="now_playing"/> */}
+              <h2>What To Watch</h2>
               <List title="popular" param="popular"/>
-              <List title="Top Rated" param="top_rated"/>
+              {/* <List title="Top Rated" param="top_rated"/> */}
               <List title="Upcoming" param="upcoming"/>
+              <Footer />
             </React.Fragment>
           }/>
         </Routes>
