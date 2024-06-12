@@ -34,9 +34,6 @@ function Banner() {
       movies.push(movie);
     })
   }
-
-  console.log(movies)
-
   return (
     <AliceCarousel
       infinite
