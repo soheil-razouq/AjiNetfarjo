@@ -9,8 +9,14 @@ export const WatchlistProvider = ({ children }) => {
     setWatchlist((prevWatchlist) => [...prevWatchlist, movie]);
   };
 
+  const removeFromWatchList = (movieId) => {
+    setWatchlist((prevWatchlist) =>
+      prevWatchlist.filter((movie) => movie.id !== movieId)
+    );
+  };
+
   return (
-    <WatchlistContext.Provider value={{ watchlist, addToWatchlist }}>
+    <WatchlistContext.Provider value={{ watchlist, addToWatchlist, removeFromWatchList }}>
       {children}
     </WatchlistContext.Provider>
   );

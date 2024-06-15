@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { WatchlistProvider } from './context/WatchlistContext';
 import Header from './components/Header';
+import HeaderAuth from './components/HeaderAuth';
 import HomeBanner from './components/HomeBanner';
 import Login from './components/Login';
 import Banner from './components/Banner';
@@ -38,7 +39,7 @@ function App() {
             } />
             <Route path="/dashboard" element={
               <React.Fragment>
-                <Header />
+                <HeaderAuth />
                 <Banner />
                 <h2>Featured Now</h2>
                 <List title="Trending Now" param="trending" />

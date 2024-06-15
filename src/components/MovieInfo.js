@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
-import Header from "./Header";
+import HeaderAuth from './HeaderAuth';
 import '../components-style/MovieInfo.css';
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -41,7 +41,7 @@ function MovieInfo() {
     <>
       {movie.title &&
         <>
-          <Header />
+          <HeaderAuth />
           <div className="movieInfo">
             <div className="movieInfo__banner">
               <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title} />

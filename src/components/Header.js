@@ -1,11 +1,12 @@
+import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const clickHandler = (e) => {
+  const login = (e) => {
     e.preventDefault();
-    navigate('/login');
+    navigate("/login");
   }
 
   return (
@@ -17,12 +18,7 @@ const Header = () => {
           </Link>
           <div className="navbar">
             <form className="d-flex" role="search">
-              {/* <select>
-                <option>English</option>
-                <option>Hindi</option>
-              </select> */}
-              <button className="btn watchlistbtn text-white" onClick={()=>navigate('/watchlist')}>Watch List</button>
-              <button className="btn signin-btn text-white" onClick={clickHandler}>Sign In</button>
+              <button className="btn btn-warning text-white" onClick={login}>Login</button>
             </form>
           </div>
         </div>

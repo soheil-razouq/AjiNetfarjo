@@ -9,7 +9,7 @@ import { WatchlistContext } from "../context/WatchlistContext";
 
 const List = ({ title, param }) => {
   const [list, setList] = useState([]);
-  const {AddToMyWatchList} = useContext(WatchlistContext);
+  const {addToWatchlist} = useContext(WatchlistContext);
   // const [myWatchList, setMyWatchList] = useState([]);
   const navigate = useNavigate();
   // const [currentTraler, setCurrentTrailer] = useState([]);
@@ -76,7 +76,7 @@ const List = ({ title, param }) => {
                     </p>
                   </div>
                 </div>
-                <button className="watchlist-btn" onClick={() => AddToMyWatchList(item)}>+ Watchlist</button>
+                <button className="watchlist-btn" onClick={() => addToWatchlist(item)}>+ Watchlist</button>
                 {/* <button className="trailer-btn" onClick={() =>ToMovieInfo(item.id)}>Trailer</button> */}
               </div>
             ))
