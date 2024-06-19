@@ -11,7 +11,7 @@ function MovieInfo() {
   const [video, setVideo] = useState([]);
   const [cast, setCast] = useState([]);
   let { id } = useParams();
-  // const userId = localStorage.getItem("userId");
+
   useEffect(() => {
     let movie_details = axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=442550cd8b9af02519751fd601c5cd5c`);
     let movie_video = axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=442550cd8b9af02519751fd601c5cd5c`);
@@ -26,7 +26,6 @@ function MovieInfo() {
         setCast(cast);
       })
     )
-
   }, []);
 
   const opts = {
@@ -54,15 +53,14 @@ function MovieInfo() {
                 <p className="title">{movie.name || movie.title}</p>
                 <div className="buttons">
                   {movie.imdb_id && <a className="imdb" href={`https://www.imdb.com/title/${movie.imdb_id}/`}><button>IMDb</button></a>}
-                  {movie.homepage && <a className="homepage" href={movie.homepage}><button>Homepage</button></a>}
+                  {/* {movie.homepage && <a className="homepage" href={movie.homepage}><button>Homepage</button></a>} */}
                 </div>
                 <div className="genres">
                   {movie.genres.map((g, key) => {
                     return (
-                      <span className="genre" key={key}><span className="sep">&#8226;</span>{g.name}</span>
+                      <span className="genre" key={key} style={{color:"red"}}><span className="sep">&#32;</span>{g.name}</span>
                     )
                   })}
-                  <span className="sep">&#8226;</span>
                 </div>
                 <p className="tagline">{movie.tagline}</p>
                 <p className="overview">{movie.overview}</p>
