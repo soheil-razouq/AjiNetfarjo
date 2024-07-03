@@ -25,7 +25,7 @@ function App() {
                 <HomeBanner />
               </React.Fragment>
             } />
-            //authentification
+            //authentification routes
             <Route path="/login" element={
               <React.Fragment>
                 <Header />
